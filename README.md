@@ -7,53 +7,122 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# SISPUS — Sistem Informasi Perpustakaan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+SISPUS (Sistem Informasi Perpustakaan) merupakan sistem informasi berbasis
+web dan mobile yang dikembangkan untuk mendukung pengelolaan perpustakaan,
+mulai dari pengelolaan data buku hingga proses peminjaman dan pengembalian.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+SISPUS terdiri dari aplikasi web sebagai sisi pengelolaan sistem dan
+aplikasi mobile sebagai sisi pengguna. Keduanya terintegrasi melalui
+REST API untuk memungkinkan pertukaran data antara aplikasi dan server.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Web
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Pengelolaan data pengguna
+- Pengelolaan kategori buku
+- Pengelolaan buku dan eksemplar
+- Pengelolaan transaksi peminjaman
+- Pengelolaan pengembalian buku
+- Pengelolaan data perpustakaan
+- Dashboard dan informasi statistik
 
-## Laravel Sponsors
+### Mobile
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Autentikasi pengguna
+- Menampilkan katalog buku
+- Pencarian dan informasi buku
+- Peminjaman buku
+- Riwayat peminjaman
+- QR Code
+- Notifikasi
+- Rekomendasi buku
 
-### Premium Partners
+### Recommendation System
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Sistem menerapkan algoritma **Apriori** untuk menganalisis pola
+peminjaman buku. Hasil analisis digunakan untuk menemukan keterkaitan
+antarbuku dan menghasilkan rekomendasi berdasarkan pola peminjaman.
 
-## Contributing
+## Technology Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Web
 
-## Code of Conduct
+- Laravel
+- PHP
+- MySQL
+- Blade
+- REST API
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Mobile
 
-## Security Vulnerabilities
+- Flutter
+- Dart
+- Firebase
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Design
 
-## License
+- Figma
+https://www.figma.com/design/schNPmBV0bXHH9GRQnvIld/TA?node-id=0-1&t=YS3085oASO34m0OB-1
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## System Architecture
+
+SISPUS menggunakan arsitektur yang menghubungkan aplikasi web dan
+mobile dengan backend melalui REST API.
+
+        ┌──────────────────┐
+        │   Web Application │
+        │     Laravel      │
+        └────────┬─────────┘
+                 │
+                 │
+             REST API
+                 │
+                 ▼
+        ┌──────────────────┐
+        │      Backend     │
+        │     Laravel      │
+        └────────┬─────────┘
+                 │
+                 ▼
+        ┌──────────────────┐
+        │     Database     │
+        │      MySQL       │
+        └────────┬─────────┘
+                 ▲
+                 │
+             REST API
+                 │
+        ┌────────┴─────────┐
+        │ Mobile Application│
+        │  Flutter / Dart  │
+        └──────────────────┘
+#Documentation
+Web Application
+<img width="733" height="385" alt="image" src="https://github.com/user-attachments/assets/be8773da-91bd-4b77-b233-487adac51d12" />
+<img width="827" height="434" alt="image" src="https://github.com/user-attachments/assets/73d9a6bf-cf4a-4620-a730-cab2ddd38d32" />
+<img width="754" height="465" alt="image" src="https://github.com/user-attachments/assets/3bb1d970-fa0d-4db0-b2d5-c627947a9f17" />
+<img width="754" height="396" alt="image" src="https://github.com/user-attachments/assets/a7045e58-b000-4f0e-82a8-5b4b41048826" />
+<img width="737" height="430" alt="image" src="https://github.com/user-attachments/assets/44dd2ff6-e2e0-4825-a22d-22f8af61c4e2" />
+<img width="679" height="356" alt="image" src="https://github.com/user-attachments/assets/20f0c0fe-88f7-481e-a21b-f02dc030c01a" />
+
+Mobile Application
+<img width="343" height="743" alt="image" src="https://github.com/user-attachments/assets/e5220aaf-da39-49fd-ac5c-d6d9bc97b75e" /><img width="314" height="757" alt="image" src="https://github.com/user-attachments/assets/0f3941b0-7227-438a-91bf-7cd7f4dce882" />
+<img width="369" height="800" alt="image" src="https://github.com/user-attachments/assets/f6a77869-e8d0-479f-a714-b70d78745818" />
+<img width="474" height="1149" alt="image" src="https://github.com/user-attachments/assets/7e8b8f3a-11f5-499b-a37a-ed05456ceb26" />
+<img width="304" height="660" alt="image" src="https://github.com/user-attachments/assets/fd97e720-9742-4171-8cbc-74fba23681b8" />
+<img width="404" height="876" alt="image" src="https://github.com/user-attachments/assets/1751e00c-a55d-4834-970e-d1da41aaa4b5" />
+<img width="414" height="899" alt="image" src="https://github.com/user-attachments/assets/adb48a8a-d938-495b-9b85-50fb72c33324" />
+Project Status
+
+Completed
+
+Developer
+
+Muftia Maulani Nabila
+
+S1 Pendidikan Teknik Informatika
