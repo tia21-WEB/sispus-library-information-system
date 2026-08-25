@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "138124502084",
+    "project_id": "sispus-a9c3a",
+    "storage_bucket": "sispus-a9c3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138124502084:android:90d81f218535558d010811",
+        "android_client_info": {
+          "package_name": "com.sispusmobile.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYSAsrLm00JO3pI_9uwRRi0-CyTAC6Q-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
